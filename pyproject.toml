@@ -1,0 +1,12 @@
+[project]
+name = "fastapi-graphql-mongodb-proto"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.136.1",
+    "pymongo>=4.17.0",
+    "strawberry-graphql>=0.316.0",
+    "uvicorn>=0.47.0",
+]
