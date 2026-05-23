@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package product;
+
+service ProductService {
+    rpc GetProduct (ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest {
+    int32 id = 1;
+}
+
+message ProductResponse {
+    int32 id = 1;
+    string name = 2;
+    float price = 3;
+}
+
+
+// To generate Python code from this .proto file, run the following command in the terminal:
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. example.proto
+
+// uv run python -m grpc_tools.protoc -I protos --python_out=proto_compiled --grpc_python_out=proto_compiled protos/product.proto

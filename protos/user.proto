@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package users;
+
+// A user record
+message User {
+	string id = 1;
+	string name = 2;
+	string email = 3;
+	string role = 4;
+}
+
+// Request to create a new user
+message CreateUserRequest {
+	string name = 1;
+	string email = 2;
+	string role = 3;
+}
+
+// Response after creating a user
+message CreateUserResponse {
+  User user = 1;
+}
+
+// Request to fetch a user by id
+message GetUserRequest {
+  string id = 1;
+}
+
+// A simple user service
+service UserService {
+	rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+	rpc GetUser(GetUserRequest) returns (User);
+}
+
+// To generate Python code from this .proto file, run the following command in the terminal:
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. example.proto
