@@ -3,3 +3,4 @@ pymongo
 uvicorn
 strawberry-graphql
 grpcio-tools
+protobuf
