@@ -4,3 +4,4 @@ uvicorn
 strawberry-graphql
 grpcio-tools
 protobuf
+confluent-kafka
